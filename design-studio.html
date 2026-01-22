@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Design Studio | Seamless Granite & Quartz Co.</title>
+  <meta name="description" content="Instant countertop estimate + free measure & quote in Edmonton, AB." />
+  <link rel="stylesheet" href="assets/style.css" />
+  
+</head>
+<body>
+
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="logo" href="index.html" aria-label="Home">
+          <span class="logo-badge"></span>
+          <span>Seamless Granite & Quartz Co.</span>
+        </a>
+        <nav class="nav-links">
+          <a class="pill" href="estimate.html">Estimate</a>
+          <a class="pill" href="book.html">Book</a>
+          <a class="pill" href="portfolio.html">Portfolio</a>
+          <a class="pill" href="design-studio.html">AI Design Studio</a>
+          <a class="pill" href="service-areas.html">Service Areas</a>
+          <a class="pill" href="city/edmonton-quartz.html">Edmonton Quartz</a>
+          <a class="btn primary" href="estimate.html">Get Instant Estimate</a>
+        </nav>
+      </div>
+    </header>
+    
+<main>
+<section class="hero">
+  <div class="container">
+    <div class="card pad">
+      <h1 class="h1" style="font-size:38px">AI Design Studio</h1>
+      <p class="sub">Upload a photo of your kitchen, bathroom, or fireplace. Pick a vibe + materials and get 1–3 redesigned concept images. Fun to play with, and it helps you choose your dream finish.</p>
+
+      <div class="grid3" style="margin-top:14px">
+        <div class="feature">
+          <h3>1) Upload a photo</h3>
+          <p>Clear photo, good light, show the counters/vanity/fireplace fully.</p>
+        </div>
+        <div class="feature">
+          <h3>2) Pick your vibe</h3>
+          <p>Modern minimal ✨ • Classic luxury 👑 • Dark & moody 🖤 • Warm contemporary 🌿</p>
+        </div>
+        <div class="feature">
+          <h3>3) Get concepts</h3>
+          <p>These are concept previews. If you love a look, book a free measure for exact pricing.</p>
+        </div>
+      </div>
+
+      <hr class="sep" />
+
+      <form id="studioForm" class="form" enctype="multipart/form-data">
+        <div class="two">
+          <div>
+            <label for="room">Room</label>
+            <select id="room" required>
+              <option value="kitchen" selected>Kitchen</option>
+              <option value="bathroom">Bathroom</option>
+              <option value="fireplace">Fireplace / Living</option>
+            </select>
+          </div>
+          <div>
+            <label for="style">Style</label>
+            <select id="style" required>
+              <option>Modern Minimal</option>
+              <option>Classic Luxury</option>
+              <option>Warm Contemporary</option>
+              <option>Japandi</option>
+              <option>Dark & Moody</option>
+              <option>Bright & Airy</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="two">
+          <div>
+            <label for="countertop">Countertop / slab look</label>
+            <select id="countertop">
+              <option>Calacatta-style quartz (white with bold veining)</option>
+              <option>Carrara-style quartz (soft grey veining)</option>
+              <option>Pure white quartz</option>
+              <option>Warm beige quartz</option>
+              <option>Black quartz (subtle texture)</option>
+              <option>Natural granite (speckled)</option>
+              <option>Black granite (Nero Marquina vibe)</option>
+              <option>Porcelain slab (concrete look)</option>
+            </select>
+          </div>
+          <div>
+            <label for="cabinets">Cabinet / vanity color</label>
+            <select id="cabinets">
+              <option>Matte white</option>
+              <option>Warm light wood</option>
+              <option>Medium walnut</option>
+              <option>Charcoal / graphite</option>
+              <option>Black</option>
+              <option>Soft greige</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="two">
+          <div>
+            <label for="backsplash">Backsplash / surround</label>
+            <select id="backsplash">
+              <option>Full-height slab (match countertop)</option>
+              <option>Large format tile (minimal grout)</option>
+              <option>Subway tile (classic)</option>
+              <option>Textured stacked stone</option>
+              <option>Slab fireplace surround (bookmatched look)</option>
+              <option>Keep existing</option>
+            </select>
+          </div>
+          <div>
+            <label for="hardware">Hardware finish</label>
+            <select id="hardware">
+              <option>Brushed brass</option>
+              <option>Matte black</option>
+              <option>Brushed nickel</option>
+              <option>Chrome</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="two">
+          <div>
+            <label for="variations">How many concepts?</label>
+            <select id="variations">
+              <option value="1" selected>1 (Free)</option>
+              <option value="2">2 (Paid)</option>
+              <option value="3">3 (Paid)</option>
+            </select>
+            <div class="small muted" style="margin-top:8px">To avoid spam, 2–3 concepts require unlock.</div>
+          </div>
+          <div>
+            <label for="contact">Your contact (required)</label>
+            <input id="contact" placeholder="Phone or email" required />
+          </div>
+        </div>
+
+        <div>
+          <label class="chip" style="display:flex;align-items:flex-start;gap:10px">
+            <input id="consent" type="checkbox" required style="width:auto;margin-top:3px">
+            <span><strong>I agree</strong> this is a concept preview. Final pricing requires an on-site measure.</span>
+          </label>
+        </div>
+
+        <div>
+          <label for="photo">Upload your photo</label>
+          <input id="photo" type="file" accept="image/*" required />
+        </div>
+
+        <div>
+          <label for="notes">Any notes?</label>
+          <textarea id="notes" placeholder="Example: keep cabinets, change countertop + backsplash, add waterfall edge, more luxury, etc."></textarea>
+        </div>
+
+        <button class="btn primary" type="submit">Generate redesign</button>
+      </form>
+
+      <div id="studioStatus" style="margin-top:14px"></div>
+
+      <div id="shopCard" class="card pad" style="display:none;margin-top:14px">
+        <h2 style="margin:0 0 8px;font-size:20px">Shop the look</h2>
+        <div class="small muted">A quick recommended combo based on your selections (you can refine after measure).</div>
+        <div id="shopList" class="grid3" style="margin-top:12px"></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+          <a class="btn" href="book.html">Book Free Measure</a>
+          <a class="btn" href="estimate.html">Get Instant Estimate</a>
+          <a class="btn" id="saveLookBtn" href="#">Save this look</a>
+        </div>
+      </div>
+
+      <div id="studioResults" class="gallery-grid" style="margin-top:14px"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+(() => {
+  const TEAM_EMAIL = "ekamjot.s.aulakh22@gmail.com";
+  const cfgUrl = "assets/studio-config.json";
+  let ENDPOINT = "/api/redesign";
+
+  const form = document.querySelector('#studioForm');
+  const status = document.querySelector('#studioStatus');
+  const results = document.querySelector('#studioResults');
+  const shopCard = document.querySelector('#shopCard');
+  const shopList = document.querySelector('#shopList');
+  const saveLookBtn = document.querySelector('#saveLookBtn');
+
+  const esc = (s) => String(s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  async function loadCfg(){
+    try { const r = await fetch(cfgUrl); return await r.json(); }
+    catch(e){ return {free_variations:1,max_variations:3,price_for_more:"9.99",currency:"CAD",stripe_payment_link:""}; }
+  }
+
+  function isUnlocked(){ return localStorage.getItem('studio_unlocked') === '1'; }
+  function unlock(){ localStorage.setItem('studio_unlocked','1'); }
+
+  function renderUnlock(cfg){
+    const link = cfg.stripe_payment_link || "";
+    const price = cfg.price_for_more || "9.99";
+    const cur = cfg.currency || "CAD";
+    return `
+      <div class="notice warn">
+        <strong>Unlock 2–3 concepts:</strong> ${esc(price)} ${esc(cur)}.
+        <div class="small" style="margin-top:8px">
+          This stops random spam so you don’t pay for fake requests.
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+          ${link && link !== "PASTE_YOUR_STRIPE_PAYMENT_LINK_HERE"
+            ? `<a class="btn primary" href="${esc(link)}" target="_blank" rel="noopener">Pay & unlock</a>`
+            : `<span class="chip">Add Stripe link in assets/studio-config.json</span>`}
+          <button class="btn" type="button" id="unlockTest">I already paid</button>
+          <a class="btn" href="book.html">Book Free Measure</a>
+        </div>
+      </div>
+    `;
+  }
+
+  function wireUnlock(){
+    const btn = document.querySelector('#unlockTest');
+    if(btn) btn.onclick = () => {
+      unlock();
+      status.innerHTML = `<div class="notice"><strong>Unlocked.</strong> Now pick 2–3 concepts and submit again.</div>`;
+    };
+  }
+
+  function recommend(sel){
+    const style = (sel.style||"").toLowerCase();
+    const room = (sel.room||"").toLowerCase();
+    let edge = "Eased / Micro-bevel";
+    let vibe = "Clean & premium";
+    let add = "Undermount sink + clean seams";
+
+    if(style.includes("classic")) { edge = "Ogee / Demi-bullnose"; vibe="Elegant luxury"; add="Waterfall edge (island)"; }
+    if(style.includes("japandi")) { edge = "Eased"; vibe="Warm + calm"; add="Light wood + matte hardware"; }
+    if(style.includes("moody")) { edge = "Eased"; vibe="Dark contrast"; add="Black hardware + slab backsplash"; }
+    if(room.includes("fireplace")) { add = "Slab surround + floating mantel"; }
+
+    return [
+      {label:"Countertop / slab", value: sel.countertop},
+      {label:"Cabinet / vanity", value: sel.cabinets},
+      {label:"Backsplash / surround", value: sel.backsplash},
+      {label:"Hardware", value: sel.hardware},
+      {label:"Edge profile (recommended)", value: edge},
+      {label:"Bonus upgrade", value: add},
+    ];
+  }
+
+  function renderShop(sel){
+    const items = recommend(sel);
+    shopList.innerHTML = items.map(x => `
+      <div class="feature">
+        <h3 style="margin:0 0 6px;font-size:16px">${esc(x.label)}</h3>
+        <p style="margin:0;color:rgba(243,245,255,.75);line-height:1.5">${esc(x.value)}</p>
+      </div>
+    `).join("");
+    shopCard.style.display = "block";
+
+    // Save look -> mailto
+    const subject = `AI Design Studio – ${sel.room} – ${sel.style}`;
+    const body = [
+      `Contact: ${sel.contact}`,
+      `Room: ${sel.room}`,
+      `Style: ${sel.style}`,
+      `Countertop: ${sel.countertop}`,
+      `Cabinets: ${sel.cabinets}`,
+      `Backsplash/Surround: ${sel.backsplash}`,
+      `Hardware: ${sel.hardware}`,
+      ``,
+      `Notes:`,
+      sel.notes || "(none)",
+      ``,
+      `If you like a concept image, reply with the option number and we’ll quote after a free measure.`
+    ].join("
+");
+
+    saveLookBtn.href = `mailto:${encodeURIComponent(TEAM_EMAIL)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  function downloadDataUrl(dataUrl, filename){
+    const a = document.createElement('a');
+    a.href = dataUrl;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  }
+
+  async function fileToDataUrl(file){
+    const r = new FileReader();
+    return await new Promise((resolve, reject) => {
+      r.onerror = () => reject(new Error("Failed to read image"));
+      r.onload = () => resolve(String(r.result||""));
+      r.readAsDataURL(file);
+    });
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    results.innerHTML = '';
+    shopCard.style.display = "none";
+
+    status.innerHTML = `<div class="notice"><strong>Working…</strong> generating your concept redesign.</div>`;
+
+    const cfg = await loadCfg();
+
+    // If you host the AI API elsewhere (Vercel/Cloudflare), paste the URL in studio-config.json
+    if(cfg.api_endpoint && cfg.api_endpoint !== 'PASTE_YOUR_API_ENDPOINT_HERE') {
+      ENDPOINT = cfg.api_endpoint;
+    }
+
+    const file = document.querySelector('#photo').files[0];
+    const sel = {
+      room: document.querySelector('#room').value,
+      style: document.querySelector('#style').value,
+      countertop: document.querySelector('#countertop').value,
+      cabinets: document.querySelector('#cabinets').value,
+      backsplash: document.querySelector('#backsplash').value,
+      hardware: document.querySelector('#hardware').value,
+      variations: parseInt(document.querySelector('#variations').value, 10),
+      contact: document.querySelector('#contact').value.trim(),
+      notes: document.querySelector('#notes').value.trim()
+    };
+
+    const free = parseInt(cfg.free_variations||1,10);
+    if(sel.variations > free && !isUnlocked()){
+      status.innerHTML = renderUnlock(cfg);
+      wireUnlock();
+      return;
+    }
+
+    const dataUrl = await fileToDataUrl(file);
+
+    const res = await fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        image_base64: dataUrl,
+        room: sel.room,
+        style: sel.style,
+        countertop: sel.countertop,
+        cabinets: sel.cabinets,
+        backsplash: sel.backsplash,
+        hardware: sel.hardware,
+        notes: sel.notes,
+        variations: sel.variations
+      })
+    });
+
+    if(res.status === 501){
+      status.innerHTML = `<div class="notice warn"><strong>Setup needed:</strong> Add <code>OPENAI_API_KEY</code> in Netlify → Environment variables, then redeploy.</div>`;
+      return;
+    }
+
+    if(!res.ok){
+      const t = await res.text();
+      status.innerHTML = `<div class="notice warn"><strong>Error:</strong> ${esc(t)}</div>`;
+      return;
+    }
+
+    const data = await res.json();
+    const imgs = data.images || [];
+    if(!imgs.length){
+      status.innerHTML = `<div class="notice warn"><strong>No images returned.</strong> Try another photo (brighter / wider view) or pick 1 concept.</div>`;
+      return;
+    }
+
+    status.innerHTML = `<div class="notice"><strong>Done!</strong> Tap any image to view full screen. Download your favorite, then book a free measure.</div>`;
+    renderShop(sel);
+
+    imgs.forEach((b64, i) => {
+      const dataUrl = `data:image/png;base64,${b64}`;
+      const card = document.createElement('div');
+      card.className = 'gcard';
+      card.setAttribute('data-cat','AI Concept');
+      card.setAttribute('data-title',`AI Concept ${i+1}`);
+      card.innerHTML = `
+        <img class="gimg" src="${dataUrl}" data-full="${dataUrl}" alt="AI redesign concept ${i+1}">
+        <div class="gmeta">
+          <div class="gtitle">AI Concept ${i+1}</div>
+          <div class="gtag">Concept render • Tap to zoom</div>
+          <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
+            <button class="iconbtn" type="button" data-dl="${i+1}">Download</button>
+            <a class="iconbtn" href="book.html">Book measure</a>
+          </div>
+        </div>
+      `;
+      results.appendChild(card);
+
+      card.querySelector('[data-dl]').onclick = () => downloadDataUrl(dataUrl, `seamless-concept-${i+1}.png`);
+    });
+
+    // Let gallery.js lightbox handle zoom
+  });
+})();
+</script>
+</main>
+<footer class="footer">
+  <div class="container">
+    <hr class="sep" />
+    <div class="footer-grid">
+      <div>
+        <div style="font-weight:800">Seamless Granite & Quartz Co.</div>
+        <div class="small">Edmonton • Beaumont • St. Albert • Sherwood Park • Leduc • Spruce Grove • Calgary</div>
+        <div class="small">Phone: (780) 231-1005 • Email: ekamjot.s.aulakh22@gmail.com</div>
+      </div>
+      <div class="small">
+        <div><a class="pill" href="estimate.html">Instant Estimate</a></div>
+        <div style="height:10px"></div>
+        <div><a class="pill" href="book.html">Book Free Measure</a></div>
+      </div>
+      <div class="small">
+        <div>© <span data-year></span> Seamless Granite & Quartz Co.. All rights reserved.</div>
+        <div>Built for leads • Fast, mobile-first</div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+
+<script src="assets/gallery.js"></script>
+<div class="sticky-actions" aria-label="Quick actions">
+  <a class="btn primary" href="tel:7802311005">Call</a>
+  <a class="btn" href="sms:7802311005">Text</a>
+  <a class="btn" href="book.html">Book</a>
+</div>
+</body>
+</html>

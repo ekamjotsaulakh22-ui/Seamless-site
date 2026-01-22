@@ -1,0 +1,8 @@
+{
+  "free_variations": 1,
+  "max_variations": 3,
+  "price_for_more": "9.99",
+  "currency": "CAD",
+  "stripe_payment_link": "PASTE_YOUR_STRIPE_PAYMENT_LINK_HERE",
+  "api_endpoint": "PASTE_YOUR_API_ENDPOINT_HERE"
+}

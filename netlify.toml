@@ -1,0 +1,39 @@
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# Pretty URLs
+[[redirects]]
+  from = "/book"
+  to = "/book.html"
+  status = 200
+
+[[redirects]]
+  from = "/estimate"
+  to = "/estimate.html"
+  status = 200
+
+[[redirects]]
+  from = "/portfolio"
+  to = "/portfolio.html"
+  status = 200
+
+[[redirects]]
+  from = "/service-areas"
+  to = "/service-areas.html"
+  status = 200
+
+[[redirects]]
+  from = "/design-studio"
+  to = "/design-studio.html"
+  status = 200
+
+# Old St. Albert slug -> new
+[[redirects]]
+  from = "/city/st.-albert-quartz.html"
+  to = "/city/st-albert-quartz.html"
+  status = 301

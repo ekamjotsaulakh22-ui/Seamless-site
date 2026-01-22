@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estimate | Seamless Granite & Quartz Co.</title>
+  <meta name="description" content="Instant countertop estimate + free measure & quote in Edmonton, AB." />
+  <link rel="stylesheet" href="assets/style.css" />
+  <meta name="lead-email" content="ekamjot.s.aulakh22@gmail.com"/>
+</head>
+<body>
+
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="logo" href="index.html" aria-label="Home">
+          <span class="logo-badge"></span>
+          <span>Seamless Granite & Quartz Co.</span>
+        </a>
+        <nav class="nav-links">
+          <a class="pill" href="estimate.html">Estimate</a>
+          <a class="pill" href="book.html">Book</a>
+          <a class="pill" href="portfolio.html">Portfolio</a>
+          <a class="pill" href="design-studio.html">AI Design Studio</a>
+          <a class="pill" href="service-areas.html">Service Areas</a>
+          <a class="pill" href="city/edmonton-quartz.html">Edmonton Quartz</a>
+          <a class="btn primary" href="estimate.html">Get Instant Estimate</a>
+        </nav>
+      </div>
+    </header>
+    
+<main>
+
+<section class="hero">
+  <div class="container">
+    <div class="card pad">
+      <h1 class="h1" style="font-size:38px">Instant Countertop Estimate</h1>
+      <p class="sub">This is a <strong>rough range</strong> to help you plan. Final pricing is confirmed after an on-site measure.</p>
+
+      <form id="estimateForm" class="form" style="margin-top:14px">
+        <div class="two">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" placeholder="Your name" autocomplete="name" />
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" placeholder="(780) 000-0000" autocomplete="tel" />
+          </div>
+        </div>
+
+        <div class="two">
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" placeholder="you@email.com" autocomplete="email" />
+          </div>
+          <div>
+            <label for="location">City / Postal code</label>
+            <input id="location" name="location" placeholder="Edmonton, T6X..." autocomplete="postal-code" />
+          </div>
+        </div>
+
+        <div class="two">
+          <div>
+            <label for="material">Material</label>
+            <select id="material" name="material" required>
+              <option value="" disabled selected>Select a material</option>
+            </select>
+          </div>
+          <div>
+            <label for="sqft">Approx size (square feet)</label>
+            <input id="sqft" name="sqft" type="number" min="5" max="500" step="1" placeholder="e.g., 45" required />
+          </div>
+        </div>
+
+        <div>
+          <label>Add-ons (optional)</label>
+          <div id="addons" style="display:flex;flex-wrap:wrap;gap:10px"></div>
+        </div>
+
+        <button class="btn primary" type="submit">Calculate estimate</button>
+      </form>
+
+      <div id="estimateOutput" style="margin-top:14px"></div>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+        <a id="sendLead" class="btn" style="display:none" href="#">Email this request</a>
+        <button id="saveLead" class="btn" type="button" style="display:none">Save locally</button>
+        <a class="btn" href="book.html">Book free measure</a>
+      </div>
+
+      <p class="small" style="margin-top:14px" id="disclaimer"></p>
+      <div class="small muted">To make this live, update your business email/phone in <strong>README</strong> and the meta tag on this page.</div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <hr class="sep" />
+    <div class="footer-grid">
+      <div>
+        <div style="font-weight:800">Seamless Granite & Quartz Co.</div>
+        <div class="small">Edmonton • Beaumont • St. Albert • Sherwood Park • Leduc • Spruce Grove • Calgary</div>
+        <div class="small">Phone: (780) 231-1005 • Email: ekamjot.s.aulakh22@gmail.com</div>
+      </div>
+      <div class="small">
+        <div><a class="pill" href="estimate.html">Instant Estimate</a></div>
+        <div style="height:10px"></div>
+        <div><a class="pill" href="book.html">Book Free Measure</a></div>
+      </div>
+      <div class="small">
+        <div>© <span data-year></span> Seamless Granite & Quartz Co.. All rights reserved.</div>
+        <div>Built for leads • Fast, mobile-first</div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+<script src="assets/estimate.js"></script>
+<div class="sticky-actions" aria-label="Quick actions">
+  <a class="btn primary" href="tel:7802311005">Call</a>
+  <a class="btn" href="sms:7802311005">Text</a>
+  <a class="btn" href="book.html">Book</a>
+</div>
+</body>
+</html>

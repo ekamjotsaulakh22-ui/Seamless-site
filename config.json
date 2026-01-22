@@ -1,0 +1,67 @@
+{
+  "currency": "CAD",
+  "labor_per_sqft": [
+    15,
+    30
+  ],
+  "materials": {
+    "Quartz": {
+      "per_sqft": [
+        70,
+        120
+      ],
+      "note": "Most popular for kitchens\u2014durable & low maintenance."
+    },
+    "Granite": {
+      "per_sqft": [
+        65,
+        120
+      ],
+      "note": "Natural stone\u2014unique patterns, needs occasional sealing."
+    },
+    "Laminate": {
+      "per_sqft": [
+        25,
+        50
+      ],
+      "note": "Budget-friendly\u2014lots of styles, lower heat resistance."
+    },
+    "Porcelain": {
+      "per_sqft": [
+        80,
+        140
+      ],
+      "note": "Heat & stain resistant\u2014great for modern looks."
+    },
+    "Dekton": {
+      "per_sqft": [
+        90,
+        160
+      ],
+      "note": "Ultra-compact surface\u2014premium performance."
+    }
+  },
+  "add_ons": {
+    "Undermount sink cutout": [
+      200,
+      400
+    ],
+    "Cooktop cutout": [
+      150,
+      300
+    ],
+    "Waterfall edge (per side)": [
+      400,
+      900
+    ],
+    "Full-height backsplash (per 10 ft)": [
+      500,
+      1100
+    ],
+    "Old countertop removal": [
+      200,
+      600
+    ]
+  },
+  "disclaimer": "Estimates are rough ranges only and depend on template/measure, material availability, edge profile, seams, access, and sink/appliance specs. Final pricing is confirmed after an on-site measure."
+}

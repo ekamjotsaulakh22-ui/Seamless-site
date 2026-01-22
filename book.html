@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book | Seamless Granite & Quartz Co.</title>
+  <meta name="description" content="Instant countertop estimate + free measure & quote in Edmonton, AB." />
+  <link rel="stylesheet" href="assets/style.css" />
+  
+</head>
+<body>
+
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="logo" href="index.html" aria-label="Home">
+          <span class="logo-badge"></span>
+          <span>Seamless Granite & Quartz Co.</span>
+        </a>
+        <nav class="nav-links">
+          <a class="pill" href="estimate.html">Estimate</a>
+          <a class="pill" href="book.html">Book</a>
+          <a class="pill" href="portfolio.html">Portfolio</a>
+          <a class="pill" href="design-studio.html">AI Design Studio</a>
+          <a class="pill" href="service-areas.html">Service Areas</a>
+          <a class="pill" href="city/edmonton-quartz.html">Edmonton Quartz</a>
+          <a class="btn primary" href="estimate.html">Get Instant Estimate</a>
+        </nav>
+      </div>
+    </header>
+    
+<main>
+
+<section class="hero">
+  <div class="container">
+    <div class="card pad">
+      <h1 class="h1" style="font-size:38px">Book a Free Measure & Quote</h1>
+      <p class="sub">Tell us what you want and your preferred time window. We’ll confirm by text/call.</p>
+
+      <div class="notice" style="margin-top:14px">
+        <strong>Fast booking:</strong> after you submit, this page will open an email draft with your details (you can send it in 1 tap).
+      </div>
+
+      <form id="bookForm" class="form" style="margin-top:14px">
+        <div class="two">
+          <div>
+            <label for="bname">Name</label>
+            <input id="bname" required placeholder="Your name" autocomplete="name" />
+          </div>
+          <div>
+            <label for="bphone">Phone</label>
+            <input id="bphone" required placeholder="(780) 000-0000" autocomplete="tel" />
+          </div>
+        </div>
+
+        <div class="two">
+          <div>
+            <label for="bemail">Email</label>
+            <input id="bemail" required placeholder="you@email.com" autocomplete="email" />
+          </div>
+          <div>
+            <label for="baddress">Address</label>
+            <input id="baddress" required placeholder="Street, City" autocomplete="street-address" />
+          </div>
+        </div>
+
+        <div class="two">
+          <div>
+            <label for="bwindow">Preferred time window</label>
+            <select id="bwindow" required>
+              <option value="" disabled selected>Select</option>
+              <option>Weekday mornings (9–12)</option>
+              <option>Weekday afternoons (12–4)</option>
+              <option>Weekday evenings (4–7)</option>
+              <option>Weekend mornings (9–12)</option>
+              <option>Weekend afternoons (12–4)</option>
+            </select>
+          </div>
+          <div>
+            <label for="bmaterial">Material (if known)</label>
+            <select id="bmaterial">
+              <option value="">Not sure yet</option>
+              <option>Quartz</option>
+              <option>Granite</option>
+              <option>Laminate</option>
+              <option>Porcelain</option>
+              <option>Dekton</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="bnotes">Notes</label>
+          <textarea id="bnotes" placeholder="Kitchen layout, island, sink type, removal needed, timeline, etc."></textarea>
+        </div>
+
+        <button class="btn primary" type="submit">Create booking email</button>
+      </form>
+
+      <div id="bookOut" style="margin-top:14px"></div>
+
+      <p class="small muted" style="margin-top:12px">Tip: You can later swap this email method to a real form backend (Formspree, Netlify Forms, Google Forms, etc.).</p>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const to = "ekamjot.s.aulakh22@gmail.com";
+  const form = document.querySelector('#bookForm');
+  const out = document.querySelector('#bookOut');
+  const enc = encodeURIComponent;
+
+  function mailto(subject, body){
+    return "mailto:" + enc(to) + "?subject=" + enc(subject) + "&body=" + enc(body);
+  }
+
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const name = document.querySelector('#bname').value.trim();
+    const phone = document.querySelector('#bphone').value.trim();
+    const email = document.querySelector('#bemail').value.trim();
+    const address = document.querySelector('#baddress').value.trim();
+    const windowPref = document.querySelector('#bwindow').value;
+    const material = document.querySelector('#bmaterial').value;
+    const notes = document.querySelector('#bnotes').value.trim();
+
+    const subject = "Free Measure Booking – " + address;
+    const body = [
+      "Name: " + name,
+      "Phone: " + phone,
+      "Email: " + email,
+      "Address: " + address,
+      "Preferred window: " + windowPref,
+      "Material: " + (material || "Not sure yet"),
+      "",
+      "Notes:",
+      (notes || "(none)")
+    ].join("\n");
+
+    const link = mailto(subject, body);
+
+    out.innerHTML = ""
+      + "<div class='notice'><strong>Almost done:</strong> tap below to open your email app, then press send.</div>"
+      + "<div style='margin-top:10px;display:flex;gap:10px;flex-wrap:wrap'>"
+      + "<a class='btn primary' href='" + link + "'>Open email draft</a>"
+      + "<a class='btn' href='estimate.html'>Get estimate instead</a>"
+      + "</div>";
+
+    // attempt auto-open
+    window.location.href = link;
+  });
+})();
+</script>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <hr class="sep" />
+    <div class="footer-grid">
+      <div>
+        <div style="font-weight:800">Seamless Granite & Quartz Co.</div>
+        <div class="small">Edmonton • Beaumont • St. Albert • Sherwood Park • Leduc • Spruce Grove • Calgary</div>
+        <div class="small">Phone: (780) 231-1005 • Email: ekamjot.s.aulakh22@gmail.com</div>
+      </div>
+      <div class="small">
+        <div><a class="pill" href="estimate.html">Instant Estimate</a></div>
+        <div style="height:10px"></div>
+        <div><a class="pill" href="book.html">Book Free Measure</a></div>
+      </div>
+      <div class="small">
+        <div>© <span data-year></span> Seamless Granite & Quartz Co.. All rights reserved.</div>
+        <div>Built for leads • Fast, mobile-first</div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+
+<div class="sticky-actions" aria-label="Quick actions">
+  <a class="btn primary" href="tel:7802311005">Call</a>
+  <a class="btn" href="sms:7802311005">Text</a>
+  <a class="btn" href="book.html">Book</a>
+</div>
+</body>
+</html>
